@@ -1,0 +1,40 @@
+a<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>INFORMATION FORM</title>
+</head>
+<body>
+
+	<h1>EMPLOYEE INFORMATION</h1>
+
+private String emplId;
+
+private String empName;
+private String password;
+private String role;
+
+
+	<table border=1>
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Employee Password</th>
+			<th>Employee Role</th>
+		</tr>
+		<c:forEach var="employee" items="${l}">
+			<tr>
+				<td>${employee.emplId}</td>
+				<td>${employee.empName}</td>
+				<td>${employee.password}</td>
+				<td>${employee.role}</td>
+			</tr>
+		</c:forEach>
+	</table>
+
+</body>
+</html>
